@@ -28,9 +28,9 @@ for line in file:
         jsonm=json.dumps(positiondata, indent=True)
         print(jsonm)
         #lähetetään HTTP:lla
-        if False:   #omalle palvelinohjelmalle tai thingspeakiin
+        if True:   #omalle palvelinohjelmalle tai thingspeakiin
 
-            response=requests.post('http://localhost:5000/newmeasurement', data=jsonm)
+            response=requests.post('http://localhost:5000/newmeasurement/', data=jsonm)
             print(response)
 
         if use_mqtt:
