@@ -2,11 +2,11 @@ import json
 import requests
 import paho.mqtt.client as mqtt
 import time
-use_mqtt=False
+use_mqtt=True
 
 if use_mqtt:
     broker_address="broker.hivemq.com"
-    client = mqtt.Client("OmayskikasitteinenTunnus") # luo uusi asiakas 
+    client = mqtt.Client("oMATUNNUS") # luo uusi asiakas 
 
     client.connect(broker_address) # avaa yhteys brokerille 
 
@@ -34,7 +34,7 @@ for line in file:
             print(response)
 
         if use_mqtt:
-            client.publish("my_topic", jsonm)
+            client.publish("my_topicTH", jsonm)
         time.sleep(1)
 
 
